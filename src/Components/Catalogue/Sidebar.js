@@ -89,6 +89,10 @@ export default class Sidebar extends Component {
     this.props.change({});
   };
 
+  priceFilter = (range) => {
+    this.filtersAction(range);
+  };
+
   componentDidMount() {
     fetch(`https://neto-api.herokuapp.com/bosa-noga/filters`)
       .then(res => res.json()).then(filters => {
@@ -102,6 +106,7 @@ export default class Sidebar extends Component {
     return (
       <section className="sidebar">
         <PriceFilter
+          filterHandler={this.priceFilter}
         />
         <div className="separator-150 separator-150-2"/>
         <ColorFilter

@@ -307,6 +307,12 @@ li.active {
   &:hover {
     cursor: pointer;
   }
+  &:disabled,
+  &[disabled] {
+    background: linear-gradient(90deg, #848283 0%, #bebebe 100.22%);
+    box-shadow: 0 2px 8px rgba(79, 79, 79, 0.6);
+    cursor: default;
+  }
 }
 .in-basket-click {
   overflow: hidden;
@@ -441,21 +447,6 @@ li.active {
   display: inline-block;
   height: 100%;
   width: 100%;
-}
-.overlooked-slider__item-1 {
-
-}
-.overlooked-slider__item-2 {
-
-}
-.overlooked-slider__item-3 {
-
-}
-.overlooked-slider__item-4 {
-
-}
-.overlooked-slider__item-5 {
-
 }
 /*Слайдер "Похожие товары"*/
 .product-card__similar-products-slider {

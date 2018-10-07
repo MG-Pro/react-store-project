@@ -307,6 +307,12 @@ li.active {
 .in-basket:hover {
   cursor: pointer;
 }
+.in-basket:disabled,
+.in-basket[disabled] {
+  background: linear-gradient(90deg, #848283 0%, #bebebe 100.22%);
+  box-shadow: 0 2px 8px rgba(79, 79, 79, 0.6);
+  cursor: default;
+}
 .in-basket-click {
   overflow: hidden;
   position: relative;

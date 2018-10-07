@@ -14,12 +14,16 @@ export default class ProductsListItem extends Component {
     e.preventDefault();
     const dir = e.currentTarget.classList.contains('arrow_right') ? 1 : -1;
     const imgs = this.props.product.images;
-    const activeImg = this.state.activeImg;
-    if (activeImg + dir < 0 || activeImg + dir >= imgs.length) {
-      return;
+    let activeImg = this.state.activeImg;
+    if (activeImg + dir < 0 ) {
+      activeImg = imgs.length - 1;
+    } else if (activeImg + dir > imgs.length - 1) {
+      activeImg = 0;
+    } else {
+      activeImg += dir;
     }
     this.setState({
-      activeImg: activeImg + dir
+      activeImg: activeImg
     })
   };
 

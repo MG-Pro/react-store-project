@@ -38,8 +38,13 @@ class App extends Component {
     const cart = {
       id: order.prod.id,
       size: order.size,
-      amount: sameOrder ? sameOrder.amount + order.quantity : order.quantity,
     };
+    if (sameOrder && order.quantity) {
+      cart.amount = sameOrder.amount + order.quantity;
+    } else {
+      cart.amount = order.quantity;
+    }
+
     fetch(`https://api-neto.herokuapp.com/bosa-noga/cart/${cartId || ''}`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -83,6 +88,7 @@ class App extends Component {
     console.log(paramsStr);
     fetch(`https://api-neto.herokuapp.com/bosa-noga/products/${paramsStr}`)
       .then(res => res.json()).then(products => {
+        console.log(products);
       this.setState({
         products: products
       })

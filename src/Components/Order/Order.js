@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 export default class Order extends Component {
   state = {
     total: 0,
-    telIsValid: false,
-    addressIsValid: false,
-    nameIsValid: false,
+    telIsValid: true,
+    addressIsValid: true,
+    nameIsValid: true,
     orderDidSend: false,
     orderData: null
   };
@@ -62,19 +62,16 @@ export default class Order extends Component {
       addressIsValid: false,
       nameIsValid: false
     };
-    if(!/^\+{1}\d{11}/i.test(form.tel.value)) {
+    if(/^\+{1}\d{11}/i.test(form.tel.value)) {
       valid.telIsValid = true;
     }
-    //if (form.tel.value < 3) {
-    //  valid.telIsValid = true;
-    //}
-    if (form.userName.value.length < 3) {
+    if (form.userName.value.length > 3) {
       valid.nameIsValid = true;
     }
-    if (form.address.value.length < 5) {
+    if (form.address.value.length > 5) {
       valid.addressIsValid = true;
     }
-    const formValid = Object.entries(valid).some(item => !item[1]);
+    const formValid = Object.entries(valid).every(item => item[1]);
     if (formValid) {
       const body = {
         name: form.userName.value,
@@ -186,7 +183,7 @@ export default class Order extends Component {
                   <label className="order-process__delivery-label">
                     <div className="order-process__delivery-text">Имя</div>
                     <input
-                      className={`order-process__delivery-input ${this.state.nameIsValid ? 'order-process__delivery-input_error' : ''}`}
+                      className={`order-process__delivery-input ${!this.state.nameIsValid ? 'order-process__delivery-input_error' : ''}`}
                       name="delivery"
                       placeholder="Представьтесь, пожалуйста"
                       id='userName'
@@ -196,7 +193,7 @@ export default class Order extends Component {
                   <label className="order-process__delivery-label">
                     <div className="order-process__delivery-text">Телефон</div>
                     <input
-                      className={`order-process__delivery-input ${this.state.telIsValid ? 'order-process__delivery-input_error' : ''}`}
+                      className={`order-process__delivery-input ${!this.state.telIsValid ? 'order-process__delivery-input_error' : ''}`}
                       type="tel"
                       name="delivery"
                       placeholder="Номер в любом формате"
@@ -209,7 +206,7 @@ export default class Order extends Component {
                     <input
                       className={`order-process__delivery-input
                        order-process__delivery-input_adress
-                       ${this.state.addressIsValid ?
+                       ${!this.state.addressIsValid ?
                         'order-process__delivery-input_error' :
                         ''}`}
                       name="delivery"

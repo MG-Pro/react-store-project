@@ -160,9 +160,6 @@ export default class Header extends Component {
         <nav className="main-menu">
           <div className="wrapper">
             <ul className="main-menu__items">
-              <li className="main-menu__item main-menu__item_sales">
-                <a href="">Акции</a>
-              </li>
               {this.props.categories.map(cat => {
                 return (
                   <li key={cat.id} className={`main-menu__item`}>
@@ -175,12 +172,6 @@ export default class Header extends Component {
                   </li>
                 )
               })}
-              <li className="main-menu__item main-menu__item_brands">
-                <a href="">Бренды</a>
-              </li>
-              <li className="main-menu__item main-menu__item_new">
-                <a href="">Новинки</a>
-              </li>
             </ul>
           </div>
         </nav>

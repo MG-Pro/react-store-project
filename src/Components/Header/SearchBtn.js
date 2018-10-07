@@ -17,6 +17,7 @@ export default class SearchBtn extends Component {
     return (
       <form
         className={`header-main__search ${this.props.active ? 'header-main__search_active' : ''}`}
+        onSubmit={e => {e.preventDefault()} }
       >
         <input placeholder="Поиск" onInput={this.inputHandler}/>
         <i className="fa fa-search" aria-hidden="true"/>

@@ -175,6 +175,7 @@ export default class ProductCard extends Component {
                 <button
                   className="in-basket in-basket-click"
                   onClick={this.addToCart}
+                  disabled={!this.state.size}
                 >В корзину</button>
               </div>
             </section>
