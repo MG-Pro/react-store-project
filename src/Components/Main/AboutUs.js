@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../../css/Main/AboutUs.css';
 
 export default class AboutUs extends Component {
   constructor(props) {

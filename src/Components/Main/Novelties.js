@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import '../../css/Main/Novelties.css';
 import {Link} from "react-router-dom";
 
 export default class Novelties extends Component {

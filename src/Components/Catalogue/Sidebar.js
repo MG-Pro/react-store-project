@@ -108,7 +108,7 @@ export default class Sidebar extends Component {
         <PriceFilter
           filterHandler={this.priceFilter}
         />
-        <div className="separator-150 separator-150-2"/>
+        <div className="separator-150"/>
         <ColorFilter
           colors={this.state.filtersData.color}
           activeColor={this.state.filters.color}
@@ -116,7 +116,7 @@ export default class Sidebar extends Component {
           filterHandler={this.listFilter}
           visible={this.state.colorVis}
         />
-        <div className="separator-150 separator-150-3"/>
+        <div className="separator-150"/>
         <SizeFilter
           sizes={this.state.filtersData.sizes}
           switch={this.sectionToggle}
@@ -124,7 +124,7 @@ export default class Sidebar extends Component {
           visible={this.state.sizeVis}
           activeSizes={this.state.filters.size}
         />
-        <div className="separator-150 separator-150-4"/>
+        <div className="separator-150"/>
         <HeelSizeFilter
           heelSizes={this.state.filtersData.heelSize}
           switch={this.sectionToggle}
@@ -132,7 +132,7 @@ export default class Sidebar extends Component {
           visible={this.state.heelSizeVis}
           activeHeelSizes={this.state.filters.heelSize}
         />
-        <div className="separator-150 separator-150-5"/>
+        <div className="separator-150"/>
         <ReasonFilter
           reasons={this.state.filtersData.reason}
           switch={this.sectionToggle}
@@ -140,7 +140,7 @@ export default class Sidebar extends Component {
           activeReasons={this.state.filters.reason}
           visible={this.state.reasonVis}
         />
-        <div className="separator-150 separator-150-6"/>
+        <div className="separator-150"/>
         <SeasonFilter
           seasons={this.state.filtersData.season}
           switch={this.sectionToggle}
@@ -148,17 +148,17 @@ export default class Sidebar extends Component {
           activeSeasons={this.state.filters.season}
           visible={this.state.seasonVis}
         />
-        <div className="separator-150 separator-150-7"/>
+        <div className="separator-150"/>
         <BrandFilter
           filterHandler={this.brandFilter}
           activeBrand={this.state.filters.search}
         />
-        <div className="separator-150 separator-150-7"/>
+        <div className="separator-150"/>
         <DiscountFilter
           filterHandler={this.discountFilter}
           active={this.state.filters.discounted}
         />
-        <div className="separator-150 separator-150-7"/>
+        <div className="separator-150"/>
         <ResetFilters
           visible={Object.entries(this.state.filters).length}
           filterHandler={this.resetFilters}

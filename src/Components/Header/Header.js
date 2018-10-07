@@ -3,7 +3,6 @@ import logo from '../../img/header-logo.png';
 import {NavLink, Link} from "react-router-dom";
 import HiddenPanel from './HiddenPanel';
 import SearchBtn from './SearchBtn';
-import '../../css/Header/Header.css';
 
 export default class Header extends Component {
   state = {
